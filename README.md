@@ -133,23 +133,22 @@ backend/
 ├── src/
 │   ├── config/
 │   │   └── configenv.js          # Configuración de variables de entorno
+│   ├── controllers/
+│   │   ├── authController.js     # Controlador de autenticación
+│   │   └── bookController.js     # Controlador de libros
+│   ├── routes/
+│   │   ├── authRoutes.js         # Rutas de autenticación
+│   │   └── bookRoutes.js         # Rutas de libros
+│   ├── services/
+│   │   ├── authService.js        # Servicios de autenticación
+│   │   ├── bookService.js        # Servicios de libros
+│   │   └── openLibraryService.js # Servicio de OpenLibrary
+│   ├── models/
+│   │   ├── User.js               # Modelo de usuario
+│   │   ├── Book.js               # Modelo de libro
+│   │   └── SearchHistory.js      # Modelo de historial
 │   ├── middleware/
 │   │   └── auth.js               # Middleware de autenticación
-│   ├── services/
-│   │   ├── auth/
-│   │   │   ├── authController.js # Controlador de autenticación
-│   │   │   ├── authRoutes.js     # Rutas de autenticación
-│   │   │   ├── authService.js    # Servicios de autenticación
-│   │   │   └── models/
-│   │   │       └── User.js       # Modelo de usuario
-│   │   └── books/
-│   │       ├── bookController.js # Controlador de libros
-│   │       ├── bookRoutes.js     # Rutas de libros
-│   │       ├── bookService.js    # Servicios de libros
-│   │       ├── openLibraryService.js # Servicio de OpenLibrary
-│   │       └── models/
-│   │           ├── Book.js       # Modelo de libro
-│   │           └── SearchHistory.js # Modelo de historial
 │   ├── utils/
 │   │   └── logger.js             # Configuración de logging
 │   └── server.js                 # Servidor principal

@@ -1,5 +1,5 @@
-const Book = require('./models/Book');
-const { logger } = require('../../utils/logger');
+const Book = require('../models/Book');
+const { logger } = require('../utils/logger');
 
 class BookService {
   async getAllBooks(filters = {}) {

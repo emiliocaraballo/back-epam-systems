@@ -5,8 +5,8 @@ const config = require('./config/configenv.js');
 const { logger, loggerMiddleware } = require('./utils/logger');
 const PORT = config.port || 3000;
 
-const booksRouter = require('./services/books/bookRoutes');
-const authRouter = require('./services/auth/authRoutes');
+const booksRouter = require('./routes/bookRoutes');
+const authRouter = require('./routes/authRoutes');
 
 
 

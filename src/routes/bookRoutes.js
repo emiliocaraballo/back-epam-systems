@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const bookController = require('./bookController');
-const authMiddleware = require('../../middleware/auth');
+const bookController = require('../controllers/bookController');
+const authMiddleware = require('../middleware/auth');
 
 router.get('/search', bookController.searchBooks);
 router.get('/last-search', bookController.getLastSearches);

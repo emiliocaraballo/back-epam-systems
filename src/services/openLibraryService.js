@@ -1,6 +1,6 @@
 const axios = require("axios");
-const Book = require("./models/Book");
-const SearchHistory = require("./models/SearchHistory");
+const Book = require("../models/Book");
+const SearchHistory = require("../models/SearchHistory");
 
 class OpenLibraryService {
   async searchBooks(query) {

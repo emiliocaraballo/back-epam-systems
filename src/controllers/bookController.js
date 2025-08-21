@@ -1,6 +1,6 @@
-const bookService = require('./bookService');
-const openLibraryService = require('./openLibraryService');
-const { logger } = require('../../utils/logger');
+const bookService = require('../services/bookService');
+const openLibraryService = require('../services/openLibraryService');
+const { logger } = require('../utils/logger');
 
 class BookController {
  
