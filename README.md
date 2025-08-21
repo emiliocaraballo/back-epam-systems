@@ -220,9 +220,9 @@ Content-Type: application/json
 
 | Método | Endpoint | Descripción | Autenticación |
 |--------|----------|-------------|---------------|
-| GET | `/api/v1/books/search?q=query` | Buscar libros en OpenLibrary | ✅ |
-| GET | `/api/v1/books/searches` | Obtener historial de búsquedas | ✅ |
-| DELETE | `/api/v1/books/searches?q=query` | Eliminar búsqueda del historial | ✅ |
+| GET | `/api/v1/books/search?q=query` | Buscar libros en OpenLibrary | ❌ |
+| GET | `/api/v1/books/last-search` | Obtener historial de búsquedas | ❌ |
+| DELETE | `/api/v1/books/search?q=query` | Eliminar búsqueda del historial | ❌ |
 
 ## 📝 Ejemplos de Uso
 
@@ -265,8 +265,28 @@ Content-Type: application/json
 
 ```http
 GET /api/v1/books/search?q=harry potter
-Authorization: Bearer <token>
+Content-Type: application/json
 ```
+
+**Nota**: Este endpoint NO requiere autenticación
+
+### Obtener Historial de Búsquedas
+
+```http
+GET /api/v1/books/last-search
+Content-Type: application/json
+```
+
+**Nota**: Este endpoint NO requiere autenticación
+
+### Eliminar del Historial de Búsquedas
+
+```http
+DELETE /api/v1/books/search?q=harry potter
+Content-Type: application/json
+```
+
+**Nota**: Este endpoint NO requiere autenticación
 
 ## 🔍 Filtros Disponibles
 
