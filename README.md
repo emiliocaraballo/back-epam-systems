@@ -49,8 +49,8 @@ npm install
 Crear un archivo `.env` en la raíz del proyecto:
 
 ```env
-PORT=4000
-MONGODB_URI=mongodb://admin:password123@localhost:27017/book-reviews?authSource=admin
+PORT=3111
+MONGODB_URI=mongodb://admin:password123@localhost:27019/book-reviews?authSource=admin
 CORS_ORIGIN=*
 BASIC_AUTH_USER=admin
 BASIC_AUTH_PASS=admin123
@@ -121,6 +121,9 @@ docker-compose logs mongodb
 
 # Acceder al shell de MongoDB
 docker exec -it book-reviews-mongodb mongosh -u admin -p password123
+
+# Conectar desde tu aplicación local
+mongodb://admin:password123@localhost:27019/book-reviews?authSource=admin
 
 # Eliminar volumen de datos (¡CUIDADO! Esto borrará todos los datos)
 docker-compose down -v
@@ -441,7 +444,7 @@ Los logs se guardan en el directorio `src/logs/` y `logs/`:
 | Variable | Descripción | Valor por Defecto |
 |----------|-------------|-------------------|
 | `PORT` | Puerto del servidor | 3111 |
-| `MONGODB_URI` | URI de conexión a MongoDB | `mongodb://admin:password123@localhost:27017/book-reviews?authSource=admin` |
+| `MONGODB_URI` | URI de conexión a MongoDB | `mongodb://admin:password123@localhost:27019/book-reviews?authSource=admin` |
 | `CORS_ORIGIN` | Origen permitido para CORS | `*` |
 | `JWT_SECRET` | Clave secreta para JWT | Requerida |
 | `BASIC_AUTH_USER` | Usuario para autenticación básica | `admin` |
