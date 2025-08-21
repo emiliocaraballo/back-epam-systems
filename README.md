@@ -328,6 +328,16 @@ npm run build
 # Ejecutar en modo producción con variables de entorno
 npm run prod
 
+# Scripts PM2 para gestión de procesos
+npm run pm2:dev          # Iniciar en modo desarrollo con PM2
+npm run pm2:prod         # Iniciar en modo producción con PM2
+npm run pm2:stop         # Detener todos los procesos PM2
+npm run pm2:restart      # Reiniciar todos los procesos PM2
+npm run pm2:delete       # Eliminar todos los procesos PM2
+npm run pm2:logs         # Ver logs de PM2
+npm run pm2:monit        # Monitor en tiempo real de PM2
+npm run pm2:status       # Estado de los procesos PM2
+
 # Ejecutar tests (pendiente de implementar)
 npm test
 ```
@@ -339,11 +349,72 @@ npm test
 - **`npm run build`**: Instala solo las dependencias de producción (excluye devDependencies)
 - **`npm run prod`**: Ejecuta la aplicación con `NODE_ENV=production` para optimizaciones
 
+#### Scripts PM2:
+
+- **`npm run pm2:dev`**: Inicia la aplicación en modo desarrollo con PM2 (watch activado)
+- **`npm run pm2:prod`**: Inicia la aplicación en modo producción con PM2 (modo cluster)
+- **`npm run pm2:stop`**: Detiene todos los procesos PM2
+- **`npm run pm2:restart`**: Reinicia todos los procesos PM2
+- **`npm run pm2:delete`**: Elimina todos los procesos PM2
+- **`npm run pm2:logs`**: Muestra los logs en tiempo real
+- **`npm run pm2:monit`**: Abre el monitor de PM2 en tiempo real
+- **`npm run pm2:status`**: Muestra el estado de todos los procesos
+
+## 🚀 Gestión de Procesos con PM2
+
+PM2 es un gestor de procesos avanzado para aplicaciones Node.js que proporciona:
+
+### Características PM2:
+- **Modo Cluster**: Utiliza todos los cores del CPU
+- **Auto-restart**: Reinicio automático en caso de fallos
+- **Watch Mode**: Reinicio automático al detectar cambios (desarrollo)
+- **Gestión de Logs**: Logs centralizados y rotación automática
+- **Monitoreo**: Monitor en tiempo real de CPU y memoria
+
+### Configuración PM2:
+
+El archivo `ecosystem.config.js` define dos configuraciones:
+
+#### Desarrollo (`book-reviews-api-dev`):
+- **1 instancia**
+- **Watch mode activado**
+- **Logs detallados**
+- **Auto-restart en cambios**
+
+#### Producción (`book-reviews-api-prod`):
+- **Modo cluster (todas las CPUs)**
+- **Watch mode desactivado**
+- **Optimizado para rendimiento**
+- **Gestión avanzada de memoria**
+
+### Comandos PM2 Útiles:
+
+```bash
+# Desarrollo
+npm run pm2:dev
+
+# Producción  
+npm run pm2:prod
+
+# Monitoreo
+npm run pm2:status
+npm run pm2:monit
+npm run pm2:logs
+
+# Control
+npm run pm2:restart
+npm run pm2:stop
+npm run pm2:delete
+```
+
 ### Logs
 
-Los logs se guardan en el directorio `src/logs/`:
-- `all.log`: Todos los logs
-- `error.log`: Solo errores
+Los logs se guardan en el directorio `src/logs/` y `logs/`:
+- `all.log`: Todos los logs de la aplicación
+- `error.log`: Solo errores de la aplicación
+- `pm2-combined.log`: Logs de PM2 combinados
+- `pm2-error.log`: Errores de PM2
+- `pm2-out.log`: Salida estándar de PM2
 
 ### Variables de Entorno
 

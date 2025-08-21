@@ -7,6 +7,14 @@
     "dev": "nodemon src/server.js",
     "build": "echo \"Building application...\" && npm install --production",
     "prod": "NODE_ENV=production node src/server.js",
+    "pm2:dev": "pm2 start ecosystem.config.js --only book-reviews-api-dev",
+    "pm2:prod": "pm2 start ecosystem.config.js --only book-reviews-api-prod",
+    "pm2:stop": "pm2 stop all",
+    "pm2:restart": "pm2 restart all",
+    "pm2:delete": "pm2 delete all",
+    "pm2:logs": "pm2 logs",
+    "pm2:monit": "pm2 monit",
+    "pm2:status": "pm2 status",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -25,6 +33,7 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "pm2": "^6.0.8"
   }
 }

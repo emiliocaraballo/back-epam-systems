@@ -18,6 +18,13 @@ src/logs/
 error.log
 all.log
 
+# PM2 logs
+.pm2/
+pm2.log
+pm2-error.log
+pm2-out.log
+pm2-combined.log
+
 # Runtime data
 pids/
 *.pid
